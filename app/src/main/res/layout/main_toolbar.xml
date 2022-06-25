@@ -20,6 +20,6 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:textColor="#636363"/>
+        android:textColor="#FFFFFF"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
