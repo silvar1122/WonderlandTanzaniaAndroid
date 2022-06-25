@@ -11,17 +11,17 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class ColumnActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     ImageView click_menu,img_nature;
     TextView home,news_room,photo_repotage,about_us,library,column;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_column);
         init();
-
         click_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,61 +38,40 @@ public class MainActivity extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Redirect_Activity(MainActivity.this,MainActivity.class);
+                Redirect_Activity(ColumnActivity.this,MainActivity.class);
             }
         });
 
         news_room.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Redirect_Activity(MainActivity.this,NewsRoomActivity.class);
+                Redirect_Activity(ColumnActivity.this,NewsRoomActivity.class);
             }
         });column.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Redirect_Activity(MainActivity.this,ColumnActivity.class);
+                Redirect_Activity(ColumnActivity.this,ColumnActivity.class);
             }
         });
         photo_repotage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Redirect_Activity(MainActivity.this,PhotoRepotageActivity.class);
+                Redirect_Activity(ColumnActivity.this,PhotoRepotageActivity.class);
             }
         });
         library.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Redirect_Activity(MainActivity.this,LibraryActivity.class);
+                Redirect_Activity(ColumnActivity.this,LibraryActivity.class);
             }
         });
         about_us.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Redirect_Activity(MainActivity.this,AboutUsActivity.class);
+                Redirect_Activity(ColumnActivity.this,AboutUsActivity.class);
             }
         });
     }
-
-    private static void OpenDrawer(DrawerLayout drawerLayout) {
-        drawerLayout.openDrawer(GravityCompat.START);
-
-    }
-    public static void CloseDrawer(DrawerLayout drawerLayout){
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
-
-            drawerLayout.closeDrawer(GravityCompat.START);
-
-        }
-
-    }
-
-    public static void Redirect_Activity(Activity activity,Class mclass){
-        Intent intent=new Intent(activity,mclass);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        activity.startActivity(intent);
-
-    }
-
     public void init(){
         drawerLayout=findViewById(R.id.drawer_layout);
         click_menu=findViewById(R.id.click_menu);
@@ -107,4 +86,24 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    private static void OpenDrawer(DrawerLayout drawerLayout) {
+        drawerLayout.openDrawer(GravityCompat.START);
+
+    }
+    public static void CloseDrawer(DrawerLayout drawerLayout){
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        }
+
+    }
+
+    public static void Redirect_Activity(Activity activity, Class mclass){
+        Intent intent=new Intent(activity,mclass);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        activity.startActivity(intent);
+
+    }
+
 }
