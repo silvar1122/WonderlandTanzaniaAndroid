@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WonderLandTanzania">
         <activity
+            android:name=".AboutUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LibraryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PhotoRepotageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ColumnActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewsRoomActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
